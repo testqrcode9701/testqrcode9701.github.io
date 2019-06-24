@@ -1,0 +1,58 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>QR Code Scanner - Scan your QR Codes</title>
+    <script>
+        var dataLayer = dataLayer || [];
+        dataLayer.push({ 'existingClient': false });</script>
+    <link rel="stylesheet" type="text/css" href="Index_files/all-0bda9fbde9.css">
+   
+    <script>qrstuffAppData = null;</script>
+    <script>document.docReady = function (f) { if (document.readyState === 'complete') f(); else document.addEventListener('DOMContentLoaded', f); }</script>
+    <script src="Index_files/all-59b65c8594.js" defer="defer"></script>
+    <!--<![endif]-->
+    <meta name="viewport" content="width=1536" id="meta-viewport">
+    <script>
+    document.docReady(function () {
+            var setViewport = function () { document.getElementById('meta-viewport').setAttribute('content', 'width=' + Math.max(screen.width, 700)); }
+            window.addEventListener("orientationchange", setViewport);
+            window.addEventListener("resize", _.debounce(setViewport, 200));
+            setViewport();
+        })</script>
+
+    <style>
+        .site-header, .constrain, .content-width {
+            min-width: 700px;
+            max-width: 950px;
+        }
+    </style>
+    <script type="text/javascript" src="Index_files/instascan.js"></script>
+    <script src="Index_files/scan-d83e092ab6.js"></script>
+    <link href="Index_files/css.css" rel="stylesheet">
+</head>
+<body class="">
+    <div class="constrain constrain-scan top">
+        <!-- begin: scan-above-scan.tpl -->
+        <div class="qrcodescan">
+            <h1>QR Scanner</h1>
+            <div class="preview-wrap error">
+                <video playsinline="" autoplay="true" class="inactive" style="transform: scaleX(-1);"></video>
+            </div>
+            <div class="result">
+            </div>
+            <script class="result-template" type="x-tmpl-mustache">
+                <div>
+                    <h2>Scan Result</h2>
+                    <div class="result-content{{#scan.displayMultiline}} multiline{{/scan.displayMultiline}}">
+                        {{#scan.isLink}}{{scan.linkIntro}} <a href="{{scan.link}}" target="_blank">{{&scan.html}}</a>{{/scan.isLink}}
+                        {{^scan.isLink}}{{&scan.html}}{{/scan.isLink}}
+                    </div>
+                    <form class="ng"><button class="scan-button button">Scan Another QR Code</button></form>
+                </div>
+            </script>
+        </div>
+    </div>
+</body>
+</html>
